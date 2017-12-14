@@ -38,13 +38,14 @@ JS Constructors
 Constructors is a function.
 
 Calling in constructor mode.
-
-`function createEmpObject(firstname) {
+```
+function createEmpObject(firstname) {
         //var this = {};
         this.firstname = firstname;
         //return this;
 } // this defined and returned in hidden mode
-Var emp2 = new createEmpObject(“antony”);`
+Var emp2 = new createEmpObject(“antony”);
+```
 
 Diff regular function & constructor function?
 -------------------------------------------------
@@ -53,7 +54,9 @@ Diff regular function & constructor function?
 Switching function types & calls
 -------------------------------------
 •	Calling constructor fn without new keyword
+
 •	won’t return anything explicity
+
 •	if nothing returned, js automatically return “undefined”.
 
 
@@ -71,11 +74,13 @@ Function Execution Types
 `function foo(){
      console.log(this) – o/p – window(global object)
 }`
+
 #Method: 2 – Calling functions as property of an object reference this reference: the object reference
 `var obj = {};
 obj.foo = function(){
 	console.log(this) – o/p – object{ foo:obj.foo() }
 };`
+
 #Method: 3 – Calling standalone functions using ‘new’ keyword this reference: the newly created object. This => pointed to newly created object.
 `new foo(); - creating empty object – o/p - object {}`
 
@@ -86,17 +91,21 @@ foo.call({})`
 this arguments values
 --------------------------
 There are two default arguments to every function call:
+
  i.	arguments
+
  ii.	this – implicit variable
+
 
 Working on object with this reference
 -----------------------------------------
 Function meant to be called in constructor mode.
-
-`function Bicycle(gear){
+```
+function Bicycle(gear){
 	this.gear = gear;
 }
-Var bicycle1 = new Bicycle(4);`
+Var bicycle1 = new Bicycle(4);
+```
 
 	this reference in inner function diff from outer function.
 
@@ -119,18 +128,23 @@ Prototypes
 
 Property lookup with prototype
 ----------------------------------
-`newObj.hello = “test from obj”;
-newObj.__proto__.hello = “test from prototype”;`
+```
+newObj.hello = “test from obj”;
+newObj.__proto__.hello = “test from prototype”;
+```
 
 	Add object property through prototype at runtime
 
 Object behaviors using prototypes
--------------------------------------
-`function foo(){}
+------------------------------------
+```
+function foo(){}
 var proto = foo.prototype;
 proto.constructor === foo(); //true
-        var b = new a.__proto__.constructor();`
+        var b = new a.__proto__.constructor();
+```        
         b returns an object
+
 The double-underscores are referred to as “dunder” as in “Dunder Mifflin”. So, this property is called “dunder-proto”.
 
 The Object Function
@@ -141,14 +155,14 @@ window – global object and function are object
 Prototype Object
 --------------------
 The automatically created prototype object is actually created using ‘new Object()’
-
-`emp.test` – checks in the hierarchy
-`emp.prop = “employee”`
-`emp.__proto__.parentProp = “parent of employee”`
-`emp.__proto__.__proto__ == Object.prototype` (global object- access to all object)
-`Object.prototype.grandParentProp = “Grand Parent”;`
-`emp.grandParentProp` [o/p – “Grand Parent”]
-
+```
+emp.test – checks in the hierarchy
+emp.prop = “employee”
+emp.__proto__.parentProp = “parent of employee”
+emp.__proto__.__proto__ == Object.prototype (global object- access to all object)
+Object.prototype.grandParentProp = “Grand Parent”;
+emp.grandParentProp [o/p – “Grand Parent”]
+```
 
 Inheritance in Javascript
 ------------------------------
