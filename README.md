@@ -12,21 +12,26 @@ Objects
 Object Basics
 -----------------
 It is the collection of multiple values
+
 •	`Var myObj = {};` - empty object
+
 •	In javascript whenever we want to create properties, can create no restrictions and no data type restrictions.
+
 •	Bracket and dot notation access to the object properties. `myObj.foo or myObj[“foo”]`
 
 Creating Objects
 ---------------------
 
-`Var emp1 = {}; - empty object
+```
+Var emp1 = {}; - empty object
 
 function createEmpObject(firstname) {
         var myObj = {};
         myObj.firstname = firstname;
         return myObj;
 }
-Var emp1 = new createEmpObject(“antony”);`
+Var emp1 = new createEmpObject(“antony”);
+```
 
 JS Constructors
 -------------------
