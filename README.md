@@ -9,16 +9,16 @@ Objects
 
 •	Object follows blueprint of code
 
-
-2.	Object Basics
+Object Basics
 -----------------
 It is the collection of multiple values
 •	`Var myObj = {};` - empty object
 •	In javascript whenever we want to create properties, can create no restrictions and no data type restrictions.
 •	Bracket and dot notation access to the object properties. `myObj.foo or myObj[“foo”]`
 
-3.	Creating Objects
+Creating Objects
 ---------------------
+
 `Var emp1 = {}; - empty object
 
 function createEmpObject(firstname) {
@@ -28,9 +28,10 @@ function createEmpObject(firstname) {
 }
 Var emp1 = new createEmpObject(“antony”);`
 
-4.	JS Constructors
+JS Constructors
 -------------------
 Constructors is a function.
+
 Calling in constructor mode.
 
 `function createEmpObject(firstname) {
@@ -40,11 +41,11 @@ Calling in constructor mode.
 } // this defined and returned in hidden mode
 Var emp2 = new createEmpObject(“antony”);`
 
-5.	Diff regular function & constructor function?
+Diff regular function & constructor function?
 -------------------------------------------------
 `Function Createemployee() {}`
 
-6.	Switching function types & calls
+Switching function types & calls
 -------------------------------------
 •	Calling constructor fn without new keyword
 •	won’t return anything explicity
@@ -52,9 +53,10 @@ Var emp2 = new createEmpObject(“antony”);`
 
 
 
-7.	Function Execution Types
+Function Execution Types
 -----------------------------
 4 - ways to call functions
+
 1.	`foo()`
 2.	`obj.foo()`
 3.	`new foo()`
@@ -76,13 +78,13 @@ obj.foo = function(){
 `function foo(){ this.abc = def; }
 foo.call({})`
 
-8.	this arguments values
+this arguments values
 --------------------------
 There are two default arguments to every function call:
  i.	arguments
  ii.	this – implicit variable
 
-9.	Working on object with this reference
+Working on object with this reference
 -----------------------------------------
 Function meant to be called in constructor mode.
 
@@ -93,31 +95,31 @@ Var bicycle1 = new Bicycle(4);`
 
 	this reference in inner function diff from outer function.
 
-10.	Using the call function
+Using the call function
 ----------------------------
 `foo() === foo.call();`
 
-11.	Constructor
+Constructor
 ----------------
 
 
 
 
 
-12.	Prototypes
+Prototypes
 --------------
 `foo.prototype === newobj.__proto__ (true)`
 
 
 
-13.	Property lookup with prototype
+Property lookup with prototype
 ----------------------------------
 `newObj.hello = “test from obj”;
 newObj.__proto__.hello = “test from prototype”;`
 
 	Add object property through prototype at runtime
 
-14.	Object behaviors using prototypes
+Object behaviors using prototypes
 -------------------------------------
 `function foo(){}
 var proto = foo.prototype;
@@ -126,12 +128,12 @@ proto.constructor === foo(); //true
         b returns an object
 The double-underscores are referred to as “dunder” as in “Dunder Mifflin”. So, this property is called “dunder-proto”.
 
-15.	The Object Function
+The Object Function
 ------------------------
 window – global object and function are object
 
 
-16.	Prototype Object
+Prototype Object
 --------------------
 The automatically created prototype object is actually created using ‘new Object()’
 
@@ -143,7 +145,7 @@ The automatically created prototype object is actually created using ‘new Obje
 `emp.grandParentProp` [o/p – “Grand Parent”]
 
 
-17.	Inheritance in Javascript
+Inheritance in Javascript
 ------------------------------
 `Mgr.__proto__.__proto__ = Employee.prototype`
 
