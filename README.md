@@ -2,7 +2,7 @@ OOjs
 =================
 
 1.	Objects
------------
+----------
 •	Creating objects
 •	Function execution & this reference
 •	Object follows blueprint of code
