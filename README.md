@@ -174,23 +174,26 @@ Inheritance in Javascript
 ========================================
 1. Object constructor
 The simplest way to create an object is to use the Object constructor: view plainprint?
+```
 var person = new Object();  
 person.name = "Diego";  
 person.getName = function(){  
     return this.name;  
 };
-
+```
 2. Literal notation
 view plainprint?
+```
 var person = {  
     person.name : "Diego",  
     person.getName : function(){  
         return this.name;  
     }  
 }
-
+```
 3. Factory function
 The Factory function allows to encapsulate and re-use the logic for creating similar objects. It leverages any of the previous constructs for this. Either: view plainprint?
+```
 var newPerson=function(name){  
     var result = new Object();  
     result.name = name;  
@@ -216,9 +219,10 @@ var personOne = newPerson("Diego");
 var personTwo = newPerson("Gangelo");  
 console.log(personOne.getName()); // prints Diego  
 console.log(personTwo.getName()); // prints Gangelo  
-
+```
 4. Function Constructor
 In Javascript it is possible to call any function with the new operator in front of it. Given a function F, for new F(): a new empty object X is created. X is set as context for F meaning throughout F this points to X. X is returned as result of F view plainprint?
+```
 function Person(name){  
         this.name = name;  
         this.getName = function(){  
@@ -230,9 +234,10 @@ console.log(personOne.getName()); // prints Diego
 console.log(personOne instanceOf Person); // prints true  
 console.log(personOne.constructor === Person); // prints true  
 console.log(personOne instanceOf Object); // prints true  
-
+```
 5. Prototype
 Functions are very special in Javascript. They are objects, they can create other objects and they automatically get a field called prototype. A prototype is a plain object with a single field, called constructor, pointing to the function itself. What makes it special is that every object created through a function inherits the function's prototype. view plainprint?
+```
 function Person(){};  
 Person.prototype.name = "Diego";  
 var personOne = new Person();  
@@ -241,9 +246,10 @@ console.log(personOne.constructor == Person); // prints true
 console.log(personOne.name); // prints Diego  
 console.log(personTwo.constructor == Person); // prints true  
 console.log(personTwo.name); // prints Diego  
-
+```
 6. Function/Prototype combination
 The function/prototype combination, as you would imagine, takes advantage of both approaches :) view plainprint?
+```
 function Person(name){  
         this.name = name;  
 };  
@@ -255,9 +261,11 @@ var personTwo = new Person("Filippo");
 console.log(personOne.getName()); // prints Diego  
 console.log(personTwo.getName()); // prints Filippo  
 console.log(personOne.getName === personTwo.getName) //prints true
-
+```
 7. Singleton
 Sometimes, you may want to make sure that only a single instance of a certain class exists. To get a Singleton in Javascript is as simple as defining and invoking the constructor at the same time: view plainprint?
+```
 var singleton = new function(){  
     this.name = "ApplicationName";  
 };  
+```
