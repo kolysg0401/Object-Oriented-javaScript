@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+<script type="text/javascript">
+  class application {
+    constructor(name, email) {
+      this.name = name;
+      this.email = email;
+    }
+    login() {
+      console.log(`${this.name} has been logged in `);
+      return this;
+    }
+    logout() {
+      console.log(`${this.name} has been logged in`);
+      return this;
+    }
+  }
+
+  class admin extends application {
+    deleteUser(user) {
+      users = users.filter(u => {
+        return u.name != user.name;
+      })
+    }
+  }
+
+  var app = new application('mano', 'manoj.antony@gmail.com');
+  var app1 = new application('divya', 'divya123@gmail.com');
+  var admin1 = new admin('admin', 'admin@gmail.com');
+  //console.log(app.login().logout());
+
+  var users = [app,app1,admin1];
+
+  admin1.deleteUser(app);
+  console.log(users)
+
+</script>
+
+  </body>
+</html>

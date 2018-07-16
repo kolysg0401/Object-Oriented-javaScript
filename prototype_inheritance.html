@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Test 3 - OOJS</title>
+  </head>
+  <body>
+
+<script type="text/javascript">
+
+function User(name, email){
+  this.name = name;
+  this.email = email;
+  // this.login = function(){
+  //   console.log(this.email, 'logged in successfully');
+  // }
+}
+
+User.prototype.login = function(){
+  console.log(this.email, 'logged in successfully');
+}
+
+function Admin(name, email){
+  User.apply(this, [name, email]);
+}
+
+Admin.prototype = Object.create(User.prototype);
+
+Admin.prototype.deleteUser = function(u){
+  users = users.filter(user => {
+    return user.email != u.email;
+  });
+}
+
+var app = new User('mano', 'manoj.antony@gmail.com');
+var app1 = new User('divya', 'divya123@gmail.com');
+
+var admin = new Admin('John', 'admin_john@gmail.com');
+
+var users = [app, app1, admin];
+
+admin.login();
+admin.deleteUser(users[2]);
+
+</script>
+
+  </body>
+</html>

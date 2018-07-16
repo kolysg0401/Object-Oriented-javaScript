@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Test 3 - OOJS</title>
+  </head>
+  <body>
+
+<script type="text/javascript">
+
+function User(name, email){
+  this.name = name;
+  this.email = email;
+  // this.login = function(){
+  //   console.log(this.email, 'logged in successfully');
+  // }
+}
+
+User.prototype.login = function(){
+  console.log(this.email, 'logged in successfully');
+}
+
+var app = new User('mano', 'manoj.antony@gmail.com');
+var app1 = new User('divya', 'divya123@gmail.com');
+
+</script>
+
+  </body>
+</html>
