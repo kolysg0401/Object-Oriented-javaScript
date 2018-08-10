@@ -1,0 +1,104 @@
+OOJS - Programming paradigm
+* Centered around objects
+a. Encapsulation
+b. Abstraction
+c. Inheritance
+d. Polymorphism
+
+1. Creating Objects
+2. Factories & Constructors
+3. Primitives & References Types
+4. Working with Properties
+5. Private Properties
+6. Getters/Setters
+
+
+1. const circle = {}; - object literals
+   const Circle {
+     radius: 1,   //Properties and methods
+     Location: {
+       x:1,
+       y:2
+     },
+     draw: function() {
+       console.log('draw');
+     }
+   }
+   
+ 2. Factory function
+    function createCircle(radius) {
+      return {
+         radius: radius,
+         draw: function() {
+           console.log('draw');
+         }
+      };
+    }
+    const circle = createCircle(1);
+    circle.draw();
+    
+    Constructor function
+    * this reference to the object to executing the piece of code
+    function Circle(radius) {
+      this.radius = radius;
+      this.draw = function() {
+        console.log('draw');
+      }
+    }
+    const another = new Circle(1);
+    *new - create empty object like - {}
+    * If we using this outside of function its refer to window object
+    * this automatically return when we using new operator
+
+    Constructor Property
+    let x = {};
+    //what is the constructor for above object literals?
+    //let x = new Object();
+    -return constructor by circel.constructor f object() { [native code] }
+    Examples:
+      new String(); // '' ""
+      new Boolean(); // true false
+      new Number(); //1 2 3
+      
+      * constructor - function that was used to create an object
+     
+     Function are Objects
+     
+3. Primitive types and Reference types
+    Number            Object
+    String            Array
+    Booloean          Functions
+    Symbol - Es7
+    undefined
+    null
+    
+    * Primitive are copied by their value
+    * Objects are copied by their reference
+    
+4. Add/ Removing Properties
+
+  Delete Object value
+  
+  Enumerating Properties
+  for(let key in circle) {
+    console.log(circle[key]);
+  }
+  const keys = Object.keys(circle);
+  
+  if('radius' in circle)
+  console.log('circle has a radius');
+  
+   Abstraction
+   *Hide the details & complexity
+   *show the essentials
+   
+5. Private Properties and methods
+
+6. Getters and setters
+   Object.defineProperty(this, 'defaultLocation', 
+   {
+     get: function(){
+       return defaultLocation;
+     }
+   })
+   
